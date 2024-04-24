@@ -38,15 +38,14 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: us-east-1
+          AWS_REGION: ap-south-1
         run: aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID && aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY && aws configure set region $AWS_REGION
 
       - name: Create CodeDeploy Deployment
-        id: deploy
         run: |
           # Assuming the Deployment Group is already setup
           aws deploy create-deployment \
             --application-name Dev-deployment \
             --deployment-group-name Dev-deployment-group \
             --deployment-config-name CodeDeployDefault.OneAtATime \
-            --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
+            --github-location repository=syedishaq13129/FlaskAppCodeDeploy,commitId=9f2fd3200ca52b751eaec5b6cc2cc029e8f2bd3a
