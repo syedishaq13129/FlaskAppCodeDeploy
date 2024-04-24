@@ -34,7 +34,7 @@ jobs:
     needs: [continuous-integration]
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: Configure AWS credentials
+      - name: Configure AWS credentials for deployment
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -48,4 +48,4 @@ jobs:
             --application-name Dev-deployment \
             --deployment-group-name Dev-deployment-group \
             --deployment-config-name CodeDeployDefault.OneAtATime \
-            --github-location repository=syedishaq13129/FlaskAppCodeDeploy
+            --github-location repository=syedishaq13129/FlaskAppCodeDeploy,commitId=${{ github.sha }}
