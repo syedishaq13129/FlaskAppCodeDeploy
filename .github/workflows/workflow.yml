@@ -48,4 +48,4 @@ jobs:
             --application-name Dev-deployment \
             --deployment-group-name Dev-deployment-group \
             --deployment-config-name CodeDeployDefault.OneAtATime \
-            --github-location repository=syedishaq13129/FlaskAppCodeDeploy,commitId=9f2fd3200ca52b751eaec5b6cc2cc029e8f2bd3a
+            --github-location repository=syedishaq13129/FlaskAppCodeDeploy
