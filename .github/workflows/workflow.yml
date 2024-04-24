@@ -25,9 +25,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
           audience: sts.amazonaws.com
-        env:
-          pythonLocation: /opt/hostedtoolcache/Python/3.9.19/x64
-          LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.19/x64/lib
 
       # Build App and Run Application Test
       - name: Build Application and Run unit Test
